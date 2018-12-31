@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewUser</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("NewUser", "Home", FormMethod.Post,
+                new { @class = "container", @style = "text-align:left;width=35%" }))
+        {
+            <div class="form-group">
+                <label for="EmailID" class="form-control-static">Email ID</label>
+                <input type="text" name="EmailID" id="EmailID" class="form-control" />
+                <label for="EmailID" class="text-danger" id="lbl_Emailid_error">*</label>
+            </div>
+            <div class="form-group">
+                <label for="Name" class="form-control-static">Name</label>
+                <input type="text" name="Name" id="Name" class="form-control" />
+                <label for="Name" class="text-danger" id="lbl_name_error">*</label>
+            </div>
+            <div class="form-group">
+                <label for="City" class="form-control-static">City </label>
+                <select name="City" id="City" class="form-control">
+                    <option value="">Select</option>
+                    <option value="">BGL</option>
+                    <option value="">Chennai</option>
+                    <option value="">Hyd</option>
+                </select>
+                <label for="City" class="text-danger" id="lbl_city_error">*</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn-danger" />
+                @Html.ActionLink("NewLogin", "Login", "Home")
+                
+            </div>
+        }
+    </div>
+</body>
+</html>
